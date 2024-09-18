@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: black;
+    font-weight: bold;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template: auto 1fr auto / auto 1fr auto;
+}
+
+header {
+    background-color: gray;
+    height: 20vh;
+    grid-column: 1 / 4;
+}
+
+header p {
+    padding: 1rem;
+}
+
+header div {
+    padding-top: 4.1rem;
+}
+
+nav {
+    margin: 0 auto 2rem;
+    height: 5vh;
+    background-color: black;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+nav a {
+    flex: 1 1 100%;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 0.75rem;
+}
+
+nav a:hover {
+    font-weight: bold;
+    text-decoration: dotted;
+    text-decoration-color: cyan;
+}
+
+main {
+    background-color: lightgray;
+    padding: 1rem;
+    grid-column: 2 / 3;
+}
+
+aside {
+    background-color: white;
+    width: 40vh;
+    padding: 1rem;
+    grid-column: 3 / 4;
+}
+
+footer {
+    background-color: gray;
+    height: 15vh;
+    padding: 2rem;
+    text-align: center;
+    grid-column: 1 / 4;
+}
