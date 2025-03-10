@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+    --heading-font: "Platypi", serif;
+    --paragraph-font: "Nunito Sans", sans-serif;
+    --link-font: "Space Grotesk", sans-serif;
+    --tx-color-1: #BF0D3E;
+    --tx-color-2: #FFF;
+    --tx-color-3: #00205B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 2fr 0.25fr auto;
+}
+
+header {
+    background-color: var(--tx-color-3);
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+header h1 {
+    padding: 2rem;
+    text-align: center;
+    color: var(--tx-color-2);
+    font-family: var(--heading-font);
+    font-weight: 800;
+}
+
+#topNav {
+    background-color: var(--tx-color-1);
+    padding: 1rem;
+}
+
+nav a {
+    font-family: var(--link-font);
+    font-size: larger;
+}
+
+nav a:hover {
+    font-weight: bold;
+    font-size: large;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.link-flex {
+    flex: 1 1 auto;
+}
+
+.header-links {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+main, aside {
+    font-family: var(--paragraph-font);
+    font-weight: 500;
+    font-variation-settings: "wdth" 87.5;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+main {
+    padding: 0;
+    margin: 0;
+    color: black;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin: 20px 10px 20px 20px;
+    border: 3px solid var(--tx-color-3);
+    border-radius: 15px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    align-items: start;
+}
+
+.card img {
+    width: 200px;
+    padding: 1rem;
+}
+
+.card p {
+    padding: 1rem;
+}
+
+#paragraph {
+    grid-column: 1 / span 1;
+}
+
+#portrait {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-self: end;
+}
+
+#imgFlag {
+    grid-column: 1;
+    justify-self: start;
+}
+
+p {
+    padding: 0.25rem;
+}
+
+aside {
+    padding: 0;
+    margin: 0;
+    color: black;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    margin: 20px 20px 20px 10px;
+    border: 3px solid var(--tx-color-3);
+    border-radius: 15px;
+}
+
+h2 {
+    background-color: var(--tx-color-3);
+    color: var(--tx-color-2);
+    font-family: var(--heading-font);
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+h3 {
+    font-family: var(--heading-font);
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--tx-color-1);
+}
+
+#sideNav {
+    padding: 2rem;
+}
+
+footer {
+    background-color: var(--tx-color-3);
+    color: var(--tx-color-2);
+    font-family: var(--link-font);
+    text-align: center;
+    padding: 1rem;
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
