@@ -1,0 +1,32 @@
+@media (min-width: 800px) {
+    nav {
+        display: block;
+    }
+    
+    #menu {
+        display: none;
+    }
+
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navigation {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .navigation li {
+        display: block;
+        flex: 1 1 auto;
+    }
+
+    .navigation a {
+        display: block;
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+}
