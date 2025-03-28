@@ -15,7 +15,7 @@
     <h1>San Antonio, TX</h1>
   </header>
   <main>
-    <!-- Hero Container: Wraps the image and overlay(s) -->
+    <!-- HERO CONTAINER: wraps the hero image and overlays -->
     <div class="hero-container">
       <!-- Responsive Hero Image -->
       <picture>
@@ -29,7 +29,7 @@
         />
       </picture>
 
-      <!-- City Data Overlay / Block -->
+      <!-- CITY DATA BLOCK -->
       <div class="data-overlay">
         <section class="data">
           <h2>Data</h2>
@@ -43,13 +43,13 @@
         </section>
       </div>
 
-      <!-- Weather Overlay for Wider Screens -->
+      <!-- WEATHER OVERLAY (Desktop Only) -->
       <div class="weather-overlay">
         <section class="weather">
           <h2>Weather</h2>
           <ul>
             <li><strong>Temperature:</strong> 45°F</li>
-            <li><strong>Conditions:</strong> Partly Cloudy</li>
+            <li><strong>Conditions:</strong> Heavy Rain with Thunder</li>
             <li><strong>Wind Speed:</strong> 8 mph</li>
             <li>
               <strong>Wind Chill:</strong>
@@ -60,12 +60,16 @@
       </div>
     </div>
 
-    <!-- For Mobile: Weather Section below the image -->
+    <!-- MOBILE WEATHER SECTION (Displayed only on narrow screens) -->
     <section class="weather-mobile">
       <h2>Weather</h2>
+      <!-- Weather Icon Container -->
+      <div class="weather-icon-container">
+        <img src="images/thunderstorm-icon.png" alt="Heavy Rain with Thunder" class="weather-icon">
+      </div>
       <ul>
         <li><strong>Temperature:</strong> 45°F</li>
-        <li><strong>Conditions:</strong> Partly Cloudy</li>
+        <li><strong>Conditions:</strong> Heavy Rain with Thunder</li>
         <li><strong>Wind Speed:</strong> 8 mph</li>
         <li>
           <strong>Wind Chill:</strong>

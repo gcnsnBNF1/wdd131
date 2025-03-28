@@ -43,20 +43,20 @@ header h1 {
   font-size: 1.8em;
 }
 
-/* Hero Container */
+/* HERO CONTAINER */
 .hero-container {
   position: relative;
 }
 
-/* Hero Image: set to 100vh height, no object-fit */
+/* HERO IMAGE: full viewport height; no object-fit */
 .hero-image {
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   display: block;
 }
 
-/* City Data Block */
-/* Mobile: static positioning so it flows below the image */
+/* CITY DATA BLOCK */
+/* Mobile: flows below the image */
 .data-overlay {
   position: static;
   margin: 1rem;
@@ -65,7 +65,7 @@ header h1 {
   max-width: 100%;
 }
 
-/* On wider screens, overlay the data block at top-left */
+/* Desktop: overlay the data block at top-left */
 @media (min-width: 37.5rem) {
   .data-overlay {
     position: absolute;
@@ -73,26 +73,25 @@ header h1 {
     left: 1rem;
     background: rgba(255, 255, 255, 0.85);
     padding: 1rem;
-    border-radius: 0.3125rem; /* ~5px */
-    max-width: 18.75rem;     /* ~300px */
+    border-radius: 0.3125rem;
+    max-width: 18.75rem;
   }
 }
 
-/* City Data Heading: Background set to Texas Red */
+/* City Data Heading: Texas Red background */
 .data h2 {
   font-family: var(--heading-font);
   background: var(--texas-red);
   color: var(--texas-white);
   margin-bottom: 0.5rem;
-  padding: 1rem;
 }
 .data p {
   margin-bottom: 0.5rem;
 }
 
-/* Weather Overlay for Desktop */
+/* WEATHER OVERLAY (Desktop Only) */
 .weather-overlay {
-  display: none; /* Hidden on mobile */
+  display: none;
 }
 
 @media (min-width: 37.5rem) {
@@ -103,12 +102,18 @@ header h1 {
     right: 1rem;
     background: rgba(255, 255, 255, 0.85);
     padding: 1rem;
-    border-radius: 0.3125rem; /* ~5px */
-    max-width: 15.625rem;    /* ~250px */
+    border-radius: 0.3125rem;
+    max-width: 15.625rem;
+  }
+  /* Desktop Weather Heading: add thunderstorm emoji */
+  .weather-overlay h2::after {
+    content: " ⛈️";
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
   }
 }
 
-/* Weather Section Styling (used in both overlays and mobile) */
+/* WEATHER SECTION STYLING (Both Mobile and Desktop) */
 /* Weather headings with Texas Blue background */
 .weather h2,
 .weather-mobile h2 {
@@ -116,7 +121,6 @@ header h1 {
   background: var(--texas-blue);
   color: var(--texas-white);
   margin-bottom: 0.5rem;
-  padding: 1rem;
 }
 
 .weather ul,
@@ -130,16 +134,28 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
-/* Mobile Weather Section: Appears below the hero container */
+/* MOBILE WEATHER SECTION */
 .weather-mobile {
   background: #fff;
-  margin: 0.625rem;   /* ~10px */
-  padding: 0.9375rem; /* ~15px */
+  margin: 0.625rem;
+  padding: 0.9375rem;
   border-radius: 0.3125rem;
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
   display: block;
 }
 
+/* Mobile: Weather Icon Container and Icon */
+.weather-mobile .weather-icon-container {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.weather-mobile .weather-icon {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+/* Hide mobile weather section on desktop */
 @media (min-width: 37.5rem) {
   .weather-mobile {
     display: none;
