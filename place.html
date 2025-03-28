@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WDD 131 - San Antonio, My Home Town - Gavin Nelson</title>
+  <meta name="description" content="A web page containing some basic information about my home town in Texas, such as the city area, population, calling code, time zone, weather conditions, etc." />
+  <meta name="author" content="Gavin Nelson" />
+  <link rel="stylesheet" href="styles/placestyles.css" />
+  <script src="scripts/placescript.js" defer></script>
+  <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>San Antonio, TX</h1>
+  </header>
+  <main>
+    <!-- Hero Container: Wraps the image and overlay(s) -->
+    <div class="hero-container">
+      <!-- Responsive Hero Image -->
+      <picture>
+        <source srcset="images/sa-riverwalk-large.webp" media="(min-width: 2000px)" />
+        <source srcset="images/sa-riverwalk-medium.webp" media="(min-width: 1000px)" />
+        <source srcset="images/sa-riverwalk-portrait-medium.webp" media="(min-width: 600px)" />
+        <img
+          src="images/sa-riverwalk-portrait-small.webp"
+          alt="San Antonio Riverwalk"
+          class="hero-image"
+        />
+      </picture>
+
+      <!-- City Data Overlay / Block -->
+      <div class="data-overlay">
+        <section class="data">
+          <h2>Data</h2>
+          <p><strong>State:</strong> Texas</p>
+          <p><strong>Year of Foundation:</strong> 1718</p>
+          <p><strong>Area:</strong> 504.64 mi<sup>2</sup></p>
+          <p><strong>Population:</strong> 1,513,974</p>
+          <p><strong>Time Zone:</strong> Central (UTC-6 / UTC-5 CDT)</p>
+          <p><strong>Area Code:</strong> +210</p>
+          <p><strong>TLD:</strong> .gov, .us</p>
+        </section>
+      </div>
+
+      <!-- Weather Overlay for Wider Screens -->
+      <div class="weather-overlay">
+        <section class="weather">
+          <h2>Weather</h2>
+          <ul>
+            <li><strong>Temperature:</strong> 45°F</li>
+            <li><strong>Conditions:</strong> Partly Cloudy</li>
+            <li><strong>Wind Speed:</strong> 8 mph</li>
+            <li>
+              <strong>Wind Chill:</strong>
+              <span id="windChill">N/A</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <!-- For Mobile: Weather Section below the image -->
+    <section class="weather-mobile">
+      <h2>Weather</h2>
+      <ul>
+        <li><strong>Temperature:</strong> 45°F</li>
+        <li><strong>Conditions:</strong> Partly Cloudy</li>
+        <li><strong>Wind Speed:</strong> 8 mph</li>
+        <li>
+          <strong>Wind Chill:</strong>
+          <span id="windChillMobile">N/A</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p><span id="copyrightInfo"></span></p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>

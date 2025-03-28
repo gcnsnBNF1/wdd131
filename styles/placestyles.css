@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --texas-red: #BF0D3E;
+  --texas-white: #FFF;
+  --texas-blue: #00205B;
+  --heading-font: "EB Garamond", serif;
+  --main-font: "Noto Sans", sans-serif;
+  --bg-light: #f5f5f5;
+}
+
+/* Ensure full height for flex layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Flex-based layout: header, main, footer */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--main-font);
+  background: var(--bg-light);
+  color: #333;
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+}
+
+/* Header */
+header {
+  background: var(--texas-red);
+  color: var(--texas-white);
+  padding: 1rem;
+  text-align: center;
+}
+header h1 {
+  font-family: var(--heading-font);
+  font-size: 1.8em;
+}
+
+/* Hero Container */
+.hero-container {
+  position: relative;
+}
+
+/* Hero Image: set to 100vh height, no object-fit */
+.hero-image {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: block;
+}
+
+/* City Data Block */
+/* Mobile: static positioning so it flows below the image */
+.data-overlay {
+  position: static;
+  margin: 1rem;
+  background: transparent;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* On wider screens, overlay the data block at top-left */
+@media (min-width: 37.5rem) {
+  .data-overlay {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1rem;
+    border-radius: 0.3125rem; /* ~5px */
+    max-width: 18.75rem;     /* ~300px */
+  }
+}
+
+/* City Data Heading: Background set to Texas Red */
+.data h2 {
+  font-family: var(--heading-font);
+  background: var(--texas-red);
+  color: var(--texas-white);
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+.data p {
+  margin-bottom: 0.5rem;
+}
+
+/* Weather Overlay for Desktop */
+.weather-overlay {
+  display: none; /* Hidden on mobile */
+}
+
+@media (min-width: 37.5rem) {
+  .weather-overlay {
+    display: block;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1rem;
+    border-radius: 0.3125rem; /* ~5px */
+    max-width: 15.625rem;    /* ~250px */
+  }
+}
+
+/* Weather Section Styling (used in both overlays and mobile) */
+/* Weather headings with Texas Blue background */
+.weather h2,
+.weather-mobile h2 {
+  font-family: var(--heading-font);
+  background: var(--texas-blue);
+  color: var(--texas-white);
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+.weather ul,
+.weather-mobile ul {
+  list-style: none;
+  padding: 0;
+}
+
+.weather ul li,
+.weather-mobile ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile Weather Section: Appears below the hero container */
+.weather-mobile {
+  background: #fff;
+  margin: 0.625rem;   /* ~10px */
+  padding: 0.9375rem; /* ~15px */
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+@media (min-width: 37.5rem) {
+  .weather-mobile {
+    display: none;
+  }
+}
+
+/* Footer */
+footer {
+  background: var(--texas-red);
+  text-align: center;
+  font-size: 0.8em;
+  color: var(--texas-white);
+  padding: 0.625rem;
+  margin: 0.625rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
