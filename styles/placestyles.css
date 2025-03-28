@@ -65,6 +65,15 @@ header h1 {
   max-width: 100%;
 }
 
+.data h2 {
+  font-family: var(--heading-font);
+  background: var(--texas-red);
+  color: var(--texas-white);
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
 /* Desktop: overlay the data block at top-left */
 @media (min-width: 37.5rem) {
   .data-overlay {
@@ -76,14 +85,16 @@ header h1 {
     border-radius: 0.3125rem;
     max-width: 18.75rem;
   }
-}
 
-/* City Data Heading: Texas Red background */
-.data h2 {
-  font-family: var(--heading-font);
-  background: var(--texas-red);
-  color: var(--texas-white);
-  margin-bottom: 0.5rem;
+  /* City Data Heading: Texas Red background */
+    .data h2 {
+      font-family: var(--heading-font);
+      background: var(--texas-red);
+      color: var(--texas-white);
+      margin-bottom: 0.5rem;
+      padding: 1rem;
+      text-align: left;
+    }
 }
 .data p {
   margin-bottom: 0.5rem;
@@ -110,6 +121,7 @@ header h1 {
     content: " ⛈️";
     font-size: 1.2rem;
     margin-left: 0.5rem;
+    padding: 1rem;
   }
 }
 
@@ -121,6 +133,15 @@ header h1 {
   background: var(--texas-blue);
   color: var(--texas-white);
   margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+.weather h2 {
+    text-align: left;
+}
+
+.weather-mobile h2 {
+    text-align: center;
 }
 
 .weather ul,
