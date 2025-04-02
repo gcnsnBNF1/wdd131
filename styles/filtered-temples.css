@@ -33,7 +33,7 @@
 body {
     font-family: var(--normal-font);
     line-height: 1.6;
-    background-color: #D8D8D8;
+    background-color: #DDD;
 }
 
 header, footer {
