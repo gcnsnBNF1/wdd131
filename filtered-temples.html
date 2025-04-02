@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>WDD 131 - Temple Picture Album - Gavin Nelson</title>
+        <meta name="description" content="A web page that contains an album of temple photos">
+        <meta name="author" content="Gavin Nelson">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/filtered-temples.css">
+        <link rel="stylesheet" href="styles/filteres-temples-large.css">
+        <script src="scripts/filtered-temples.js" defer></script>
+        <script src="scripts/getdates.js" defer></script>
+    </head>
+    <body>
+        <header class="top">
+            <h1>Temple Album</h1>
+            <button type="button" id="menu"></button>
+            <nav class="filter-menu">
+                <ul class="navigation">
+                    <li><button id="home">Home</button></li>
+                    <li><button id="old">Old</button></li>
+                    <li><button id="new">New</button></li>
+                    <li><button id="large">Large</button></li>
+                    <li><button id="small">Small</button></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2 id="album-title"></h2>
+            <div class="album"></div>
+        </main>
+        <footer>
+            <p><span id="copyrightInfo"></span></p>
+            <p id="lastModified"></p>
+        </footer>
+    </body>
+</html>
