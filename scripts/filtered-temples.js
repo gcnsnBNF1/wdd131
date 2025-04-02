@@ -93,6 +93,8 @@ const lazyLoadImages = () => {
           if (entry.isIntersecting) {
               img.src = img.getAttribute('data-src'); // Assign data-src to src
               img.style.animation = "fadeIn 1s ease-in forwards";
+          } else {
+            img.style.animation = "fadeOut 1s ease-in forwards";
           }
       });
   });
