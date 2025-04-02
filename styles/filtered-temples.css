@@ -33,7 +33,7 @@
 body {
     font-family: var(--normal-font);
     line-height: 1.6;
-    background-color: #DDD;
+    background-color: #EEE;
 }
 
 header, footer {
@@ -88,12 +88,13 @@ main h2 {
     margin: 1rem 0;
 }
 
-.filter-menu button {
+.filter-menu a {
     font-family: var(--heading-font);
     font-size: 1rem;
     font-weight: 600;
     background-color: var(--texas-blue);
     color: var(--highlight-color);
+    text-decoration: none;
     border: 1px solid var(--texas-blue);
     border-radius: 5px;
     padding: 0.75rem 1rem;
@@ -101,7 +102,7 @@ main h2 {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.filter-menu button:hover {
+.filter-menu a:hover {
     background-color: var(--highlight-color);
     color: var(--hover-blue);
 }

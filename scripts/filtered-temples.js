@@ -1,11 +1,15 @@
-const hamButton = document.querySelector('#menu');
-const navigation = document.querySelector('.navigation');
+// Hamburger Menu Logic
+const initializeHamburgerMenu = () => {
+  const hamButton = document.querySelector('#menu');
+  const navigation = document.querySelector('.navigation');
 
-hamButton.addEventListener('click', () => {
-    navigation.classList.toggle('open');
-    hamButton.classList.toggle('open');
-});
+  hamButton.addEventListener('click', () => {
+      navigation.classList.toggle('open'); // Toggle 'open' class for navigation
+      hamButton.classList.toggle('open'); // Toggle hamburger/close icon
+  });
+};
 
+// Temple Data Array
 const temples = [
     {
       templeName: "Aba Nigeria",
@@ -81,68 +85,78 @@ const temples = [
     }
   ];
 
-  const album = document.querySelector(".album");
-  const albumTitle = document.getElementById("album-title");
-  
-  const lazyLoadImages = () => {
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              const img = entry.target;
-              if (entry.isIntersecting) {
-                  img.src = img.getAttribute('src');
-                  img.style.animation = "fadeIn 1s ease-in forwards";
-              } else {
-                  img.style.animation = "fadeOut 1s ease-out forwards";
-              }
-          });
+  // Lazy Loading Logic
+const lazyLoadImages = () => {
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          const img = entry.target;
+          if (entry.isIntersecting) {
+              img.src = img.getAttribute('data-src'); // Assign data-src to src
+              img.style.animation = "fadeIn 1s ease-in forwards";
+          }
       });
-  
-      document.querySelectorAll('.lazy').forEach(img => observer.observe(img));
-  };
-  
-  const displayTemples = (temples) => { 
-      album.innerHTML = temples.map(temple => `
-        <div class="temple-card">
+  });
+
+  document.querySelectorAll('.lazy').forEach(img => observer.observe(img));
+};
+
+// Display Temples in Album
+const displayTemples = (temples) => {
+  const album = document.querySelector('.album');
+  album.innerHTML = temples.map(temple => `
+      <div class="temple-card">
           <div class="temple-info">
-            <h3>${temple.templeName}</h3>
-            <p>Location: ${temple.location}</p>
-            <p>Dedicated: ${temple.dedicated}</p>
-            <p>Size: ${temple.area} ft<sup>2</sup></p>
+              <h3>${temple.templeName}</h3>
+              <p>Location: ${temple.location}</p>
+              <p>Dedicated: ${temple.dedicated}</p>
+              <p>Size: ${temple.area} ft<sup>2</sup></p>
           </div>
           <div class="temple-image">
-            <img class="lazy" src="${temple.imageUrl}" alt="${temple.templeName}">
+              <img class="lazy" data-src="${temple.imageUrl}" alt="${temple.templeName}">
           </div>
-        </div>
-      `).join("");
-  
-      lazyLoadImages();
-  };
-  
+      </div>
+  `).join("");
+  lazyLoadImages(); // Trigger lazy loading
+};
+
+// Filter Logic and Title Updates
+const addFilterListeners = () => {
+  const albumTitle = document.getElementById("album-title");
+
   const updateAlbum = (filterFn, title) => {
       const filteredTemples = temples.filter(filterFn);
       displayTemples(filteredTemples);
       albumTitle.textContent = title;
   };
-  
-  document.querySelector("#old").addEventListener("click", () => {
-      updateAlbum(temple => new Date(temple.dedicated.split(",")[0]).getFullYear() < 1900, "Old Temples");
-  });
-  
-  document.querySelector("#new").addEventListener("click", () => {
-      updateAlbum(temple => new Date(temple.dedicated.split(",")[0]).getFullYear() > 2000, "New Temples");
-  });
-  
-  document.querySelector("#large").addEventListener("click", () => {
-      updateAlbum(temple => temple.area > 90000, "Large Temples");
-  });
-  
-  document.querySelector("#small").addEventListener("click", () => {
-      updateAlbum(temple => temple.area < 10000, "Small Temples");
-  });
-  
+
+  // Adding event listeners for filters
   document.querySelector("#home").addEventListener("click", () => {
       updateAlbum(() => true, "Home");
   });
-  
-  displayTemples(temples);
-  albumTitle.textContent = "Home";
+
+  document.querySelector("#old").addEventListener("click", () => {
+      updateAlbum(temple => new Date(temple.dedicated.split(",")[0]).getFullYear() < 1900, "Old Temples");
+  });
+
+  document.querySelector("#new").addEventListener("click", () => {
+      updateAlbum(temple => new Date(temple.dedicated.split(",")[0]).getFullYear() > 2000, "New Temples");
+  });
+
+  document.querySelector("#large").addEventListener("click", () => {
+      updateAlbum(temple => temple.area > 90000, "Large Temples");
+  });
+
+  document.querySelector("#small").addEventListener("click", () => {
+      updateAlbum(temple => temple.area < 10000, "Small Temples");
+  });
+};
+
+// Initialize Page Logic
+const initializePage = () => {
+  displayTemples(temples); // Render all temples by default
+  addFilterListeners(); // Add filter functionality
+  initializeHamburgerMenu(); // Add hamburger menu functionality
+};
+
+// Load All Page Logic
+initializePage();
