@@ -1,0 +1,137 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+
+/*----------- HEADER --------------*/
+header {
+    padding: .5rem 2%;
+    background-color: #ddd;
+}
+header h1 {margin: 0;}
+header h2 {margin: 0; font-weight: normal;}
+
+/*----------- NAVIGATION --------------*/
+nav {
+    background-color: #666;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {border-bottom: solid 1px #333;}
+nav ul li a {
+    display: block;
+    background-color: #444;
+    color: #eee;
+    padding: .5rem 0;
+    text-decoration: none;
+    font-size: .9rem;
+    text-align: center;
+}
+nav ul li.active a {
+    background-color: #000;
+    color: #fff;
+}
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+    min-height: 20rem;
+}
+
+/*----------- FORM --------------*/
+.WF1 fieldset {
+    margin: 2rem 0;
+    border: 1px sold #DDD;
+    border-radius: 6px;
+    padding: 0.5rem 2%;
+}
+
+.WF1 legend {
+    color: #265DBF;
+    padding: 0 0.5rem;
+}
+
+.WF1 label {
+    display: block;
+    padding-top: 1rem;
+    color: #CC0033;
+    font-size: 0.9rem;
+}
+
+.WF1 div {
+    padding-top: 1rem;
+    color: #265DBF;
+    font-size: 0.9rem;
+}
+
+.WF1 input[type="text"],
+.WF1 input[type="tel"],
+.WF1 input[type="url"],
+.WF1 input[type="email"],
+.WF1 input[type="date"],
+.WF1 select,
+.WF1 input[type="number"] {
+    background-color: #eee;
+    display: block;
+    border: solid 1px #888;
+    border-radius: 6px;
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 400px;
+    appearance: none;
+}
+
+.WF1 input[type="tel"]::placeholder,
+.WF1 input[type="url"]::placeholder,
+.WF1 input[type="email"]::placeholder {
+    color: #808080;
+}
+
+.WF1 input[type="tel"]:focus::placeholder,
+.WF1 input[type="url"]:focus::placeholder,
+.WF1 input[type="email"]:focus::placeholder {
+    opacity: 0;
+}
+
+.WF1 input[type="radio"],
+.WF1 input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.WF1 input[type="submit"] {
+    margin: -1rem 2% 2rem 2%;
+    border: 1.5px solid #175F23;
+    background-image: linear-gradient(#32CD4C, #1B6F29);
+    color: #FFF;
+    border-radius: 6px;
+    padding: 1rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 1px 1px 4px #555;
+}
+
+.WF1 input:required {
+    border-left: solid 5px red;
+}
+
+.WF1 input:required:valid {
+    border-left: solid 5px green;
+}
+
+/*----------- FOOTER --------------*/
+footer {
+    background-color: #ddd;
+    padding: .5rem 2%;
+    text-align: center;
+}
