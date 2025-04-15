@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Page</title>
+    <meta name="description" content="The page where you can scroll the reviews submitted from the product review page">
+    <meta name="author" content="Gavin Nelson">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/reviewstyle.css">
+    <script src="scripts/reviewscript.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>User Reviews</h1>
+    </header>
+    <main>
+        <!-- Review Counter -->
+        <p id="reviewCounter">Total Reviews Submitted: 0</p>
+
+        <!-- Container for Reviews -->
+        <section id="reviewDisplay">
+            <!-- Dynamically populated reviews will appear here -->
+        </section>
+    </main>
+    <footer>
+        <p><span id="copyrightInfo"></span></p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

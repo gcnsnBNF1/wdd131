@@ -1,0 +1,17 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 2rem;
+}
+header {
+    text-align: center;
+}
+.review-item {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+#reviewCounter {
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
