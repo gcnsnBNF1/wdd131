@@ -86,5 +86,5 @@ document.querySelector(".webform").addEventListener("submit", function(event) {
 
     localStorage.setItem("reviewCount", reviewCount);
     alert(`Your review has been submitted. Thank you. Total reviews submitted: ${reviewCount}`);
-    // windows.location.href("review.html");
+    windows.location.href("review.html");
 });
