@@ -1,0 +1,141 @@
+
+:root {
+    --body-font: "Open Sans", sans-serif;
+    --texas-blue: #00205B;
+    --texas-red: #BF0D3E;
+    --form-grey: #EEE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #BBB;
+    height: 100vh;
+    font-family: var(--body-font);
+}
+
+header {
+    background-color: var(--texas-blue);
+    color: #FFF;
+    text-align: center;
+    padding: 2rem 2%;
+}
+
+main {
+    padding: 7.5%;
+}
+
+.webform {
+    background-color: var(--form-grey);
+    margin: 1rem 0;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 0.5rem 2%;
+}
+
+.webform legend {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    margin-left: -0.5rem;
+}
+
+.webform legend mark {
+    font-weight: 400;
+    font-size: 0.8rem;
+    background: none;
+    color: navy;
+}
+
+.webform fieldset {
+    margin: 2rem 0;
+    border: none;
+    padding: 0.5rem 2%;
+}
+
+.webform fieldset.radio-fieldset {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    border: none;
+    padding: 0.5rem 2%;
+}
+
+.webform .radio-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.webform .radio-group label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.webform input[type="radio"] {
+    margin-top: 0.5rem;
+}
+
+.webform label {
+    display: block;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
+#italicized {
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.webform textarea {
+    background-color: #fff;
+    width: 400px;
+    height: 200px;
+    border: solid 1px #888;
+    border-radius: 6px;
+    padding: 0.75rem;
+}
+
+.webform input[type="text"],
+.webform input[type="date"],
+.webform select {
+    font-family: var(--body-font);
+    background-color: #fff;
+    display: block;
+    border: solid 1px #888;
+    border-radius: 6px;
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.webform input[type="radio"],
+.webform input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.webform input[type="submit"] {
+    margin: -0.5rem 2% 3rem 2%;
+    border: 1.5px solid #888;
+    background-image: linear-gradient(to bottom right, #FFF, #CCC);
+    font-family: var(--body-font);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 1rem;
+    width: 90%;
+    max-width: 400px;
+}
+
+footer {
+    background-color: var(--texas-red);
+    color: #FFF;
+    text-align: center;
+    padding: 1rem;
+}

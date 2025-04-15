@@ -52,7 +52,7 @@ main {
 /*----------- FORM --------------*/
 .WF1 fieldset {
     margin: 2rem 0;
-    border: 1px sold #DDD;
+    border: 1px solid #DDD;
     border-radius: 6px;
     padding: 0.5rem 2%;
 }

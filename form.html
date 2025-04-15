@@ -14,6 +14,72 @@
     <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <main>
+        <form method="get" action="review.html" class="webform">
+            <fieldset>
+                <legend>Product Name</legend>
+                <select name="products" id="productList" required>
+                    <option value="" disabled selected>Select a Product &#8230;</option>
+                </select>
+            </fieldset>
+            <fieldset class="radio-fieldset">
+                <legend>Overall Rating</legend>
+                <div class="radio-group">
+                    <label for="fiveStars">
+                        &star;&star;&star;&star;&star;
+                        <input type="radio" name="rating" id="fiveStars" value="5" required>
+                    </label>  
+                    
+                    <label for="fourStars">
+                        &star;&star;&star;&star;
+                        <input type="radio" name="rating" id="fourStars" value="4"> 
+                    </label>
+                    
+                    <label for="threeStars">
+                        &star;&star;&star;
+                        <input type="radio" name="rating" id="threeStars" value="3">    
+                    </label>
+                    
+                    <label for="twoStars">
+                        &star;&star;
+                        <input type="radio" name="rating" id="twoStars" value="2">
+                    </label>
+                    
+                    <label for="oneStar">
+                        &star;
+                        <input type="radio" name="rating" id="oneStar" value="1">
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Date of Installion</legend>
+                <input type="date" id="dateInput" name="installionDate" required>
+            </fieldset>
+            <fieldset>
+                <legend>Which features did you find useful in the product?</legend>
+                <div id="italicized">(Check all that apply)</div>
+                <label><input type="checkbox" id="easeOfUse" name="features" value="easeOfUse">Ease of Use</label>
+                <label><input type="checkbox" id="performance" name="features" value="performance">Performance</label>
+                <label><input type="checkbox" id="design" name="features" value="design">Design</label>
+                <label><input type="checkbox" id="durability" name="features" value="durability">Durability</label>
+            </fieldset>
+            <fieldset>
+                <legend>Written Review <mark>(Optional)</mark></legend>
+                <textarea id="textBox" name="textBox"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Your Name <mark>(Optional)</mark></legend>
+                <input type="text" id="fullNameInput" name="fullNameInput">
+            </fieldset>
+            <input type="submit" value="Post Review">
+        </form>
+    </main>
+    <footer>
+        <p><span id="copyrightInfo"></span></p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
