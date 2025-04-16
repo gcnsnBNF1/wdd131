@@ -1,0 +1,79 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #AAA;
+    padding: 1rem;
+}
+
+header h1 {
+    background-color: #DDD;
+    padding: 0.5rem;
+    border-top: 1px solid #777;
+    border-right: 3px solid #777;
+    border-bottom: 3px solid #777;
+    border-left: 1px solid #777;
+}
+
+h2 {
+    background-color: #008;
+    color: white;
+    padding: 0.5rem;
+}
+
+#domainName {
+    background: none;
+    color: #008;
+    text-decoration: underline;
+    font-size: 1.25rem;
+}
+
+#typeFaceOne {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    background: none;
+}
+
+#typeFaceTwo {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-size: 2rem;
+    background: none;
+}
+
+.wireframe-img {
+    margin: 1rem;
+    display: block;
+    border: 1px solid black;
+    padding: 0.5rem;
+    max-width: 600px;
+    height: auto;
+}
+
+span {
+    display: block;
+}
+
+#darkgrey {
+    background-color: #999;
+    margin: 0.25rem;
+    padding: 2rem;
+    max-width: 200px;
+}
+
+#lightgrey {
+    background-color: #DDD;
+    margin: 0.25rem;
+    padding: 2rem;
+    max-width: 200px;
+}
+
+#blue {
+    background-color: #00F;
+    margin: 0.25rem;
+    padding: 2rem;
+    max-width: 200px;
+}
