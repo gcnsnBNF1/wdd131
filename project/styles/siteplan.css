@@ -65,14 +65,21 @@ span {
 }
 
 #lightgrey {
-    background-color: #DDD;
+    background-color: #CCC;
     margin: 0.25rem;
     padding: 2rem;
     max-width: 200px;
 }
 
-#blue {
-    background-color: #00F;
+#olivegreen {
+    background-color: #693;
+    margin: 0.25rem;
+    padding: 2rem;
+    max-width: 200px;
+}
+
+#skyblue {
+    background-color: #69C;
     margin: 0.25rem;
     padding: 2rem;
     max-width: 200px;
