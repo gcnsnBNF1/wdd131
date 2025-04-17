@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Zen Scientific Calculator</title>
+        <meta name="description" content="A scientific calculator with a customizable interface to invoke feelings of individuallity and calmness. Much like CSS Zen Garden.">
+        <meta name="author" content="Gavin C. Nelson">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="scripts/scientificprogram.js" defer></script>
+        <link rel="stylesheet" href="styles/calculatorstyles.css">
+        <script src="../scripts/getdates.js" defer></script>
+    </head>
+    <body>
+        <picture>
+            <source srcset="images/windows_original_files_9.jpg" media="(min-width: 1000px)" />
+            <source srcset="images/windows_original_files_9_medium.jpg" media="(min-width: 600px)" />
+            <img
+              src="images/windows_original_files_9_small.jpg"
+              alt="Windows Mountain Wallpaper"
+              class="background-image" loading="lazy"/>
+          </picture>
+        <header>
+            <h1>CSS Zen Calculator</h1>
+            <nav class="menu">
+                <ul class="navigation">
+                    <li><a href="csszencalculator.html">Basic</a></li>
+                    <li><a href="#" class="active">Scientific</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="wrapper">
+                <span id="displayResult">0</span>
+                <div class="scientific">
+                    <button id="leftParenthesis" class="topper">(</button>
+                    <button id="rightParenthesis" class="topper">)</button>
+                    <button id="absoluteValue" class="topper">| |</button>
+                    <button id="squared" class="topper">&#x1D465;<sup>2</sup></button>
+                    <button id="cubed" class="topper">&#x1D465;<sup>3</sup></button>
+                    <button id="xPowerOfY" class="topper">&#x1D465;<sup>&#x1D466;</sup></button>
+                    <button id="clear" class="black-topper">C</button>
+                    <button id="percent" class="black-topper">%</button>
+                    <button id="toggle-sign" class="black-topper">+/-</button>
+                    <button id="divide" class="operation">÷</button>
+                    <button id="ePowerOfX" class="topper">&#x1D452;<sup>&#x1D465;</sup></button>
+                    <button id="tenPowerOfX" class="topper">10<sup>&#x1D465;</sup></button>
+                    <button id="yPowerOfX" class="topper">&#x1D466;<sup>&#x1D465;</sup></button>
+                    <button id="twoPowerOfX" class="topper">2<sup>&#x1D465;</sup></button>
+                    <button id="logOfY" class="topper">log<sub>&#x1D466;</sub></button>
+                    <button id="logOfTwo" class="topper">log<sub>2</sub></button>
+                    <button id="seven" class="">7</button>
+                    <button id="eight" class="">8</button>
+                    <button id="nine" class="">9</button>
+                    <button id="multiply" class="operation">×</button>
+                    <button id="oneXth" class="topper">1/&#x1D465;</button>
+                    <button id="sqrtOfX" class="topper"><sup>2</sup>√&#x1D465;</button>
+                    <button id="cbrtOfX" class="topper"><sup>3</sup>√&#x1D465;</button>
+                    <button id="yrtOfX" class="topper"><sup>&#x1D466;</sup>√&#x1D465;</button>
+                    <button id="naturalLog" class="topper">ln</button>
+                    <button id="logOfTen" class="topper">log<sub>10</sub></button>
+                    <button id="four" class="">4</button>
+                    <button id="five" class="">5</button>
+                    <button id="six" class="">6</button>
+                    <button id="subtract" class="operation">-</button>
+                    <button id="sine" class="topper">sin</button>
+                    <button id="cosine" class="topper">cos</button>
+                    <button id="tangent" class="topper">tan</button>
+                    <button id="cotangent" class="topper">cot</button>
+                    <button id="secant" class="topper">sec</button>
+                    <button id="cosecant" class="topper">csc</button>
+                    <button id="one" class="">1</button>
+                    <button id="two" class="">2</button>
+                    <button id="three" class="">3</button>
+                    <button id="add" class="operation">+</button>
+                    <button id="xFactorial" class="topper">&#x1D465;!</button>
+                    <button id="eulersNumber" class="topper">&#x1D452;</button>
+                    <button id="timesTenPowerOfX" class="topper">EE</button>
+                    <button id="pi" class="topper">&#x1D70B;</button>
+                    <button id="radians" class="topper">Rad</button>
+                    <button id="degrees" class="topper">Deg</button>
+                    <button id="zero" class="wide">0</button>
+                    <button id="decimal" class="">.</button>
+                    <button id="equals" class="operation">=</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p><span id="copyrightInfo"></span></p>
+            <p id="lastModified"></p>
+        </footer>
+    </body>
+</html>

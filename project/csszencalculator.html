@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Zen Calculator</title>
+        <meta name="description" content="A basic calculator with a customizable interface to invoke feelings of individuallity and calmness. Much like CSS Zen Garden.">
+        <meta name="author" content="Gavin C. Nelson">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="scripts/calcprogram.js" defer></script>
+        <link rel="stylesheet" href="styles/calculatorstyles.css">
+        <script src="../scripts/getdates.js" defer></script>
+    </head>
+    <body>
+        <picture>
+            <source srcset="images/windows_stock_photos_74.jpg" media="(min-width: 1000px)" />
+            <source srcset="images/windows_stock_photos_74_medium.jpg" media="(min-width: 600px)" />
+            <img
+              src="images/windows_stock_photos_74_small.jpg"
+              alt="Windows Mountain Wallpaper"
+              class="background-image"
+              loading="lazy"
+            />
+          </picture>
+        <header>
+            <h1>CSS Zen Calculator</h1>
+            <nav class="menu">
+                <ul class="navigation">
+                    <li><a href="#" class="active">Basic</a></li>
+                    <li><a href="csszenscientific.html">Scientific</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="wrapper">
+                <span id="displayResult">0</span>
+                <div class="basic"></div>
+            </div>
+        </main>
+        <footer>
+            <p><span id="copyrightInfo"></span></p>
+            <p id="lastModified"></p>
+        </footer>
+    </body>
+</html>

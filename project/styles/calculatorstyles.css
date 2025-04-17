@@ -1,0 +1,349 @@
+/* VARIABLES */
+:root {
+    --page-font: "Barlow Semi Condensed", serif;
+    --light-grey: #CCC;
+    --dark-grey: #999;
+    --olive-green: #693;
+    --sky-blue: #69C;
+  }
+  
+  /* RESET */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* MOBILE-FIRST GLOBAL STYLES */
+  body {
+    font-family: var(--page-font);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  /* Hide background image on mobile */
+  .background-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -5;
+  }
+  
+  /* HEADER */
+  header {
+    width: 100%;
+    background-color: rgba(153, 153, 153, 0.75);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 100;
+    overflow: visible;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: rgba(153, 153, 153, 0.75);
+    border: 2px solid rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    color: #FFF;
+  }
+  
+  /* Navigation: hidden by default on mobile */
+  header nav {
+    width: 100%;
+    overflow: visible;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    position: relative;
+    z-index: 105;
+  }
+  
+  header a.active {
+    background-color: var(--olive-green);
+    max-height: 500px; /* allows the nav to expand when toggled */
+  }
+
+  header nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(153, 153, 153, 0.75);
+    border: 2px solid rgba(204, 204, 204, 0.5);
+    border-radius: 20px;
+  }
+  
+  header nav ul li {
+    padding: 0.5rem 1rem;
+  }
+  
+  header nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: text-shadow 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    text-shadow: 
+    0 0 8px rgba(102, 153, 51, 0.9),
+    0 0 16px rgba(102, 153, 51, 0.7),
+    0 0 24px rgba(102, 153, 51, 0.5);
+  }
+  
+  /* MAIN CONTENT AREA */
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  /* Calculator Wrapper */
+  .wrapper {
+    width: 90%;
+    min-width: 400px;
+    background-color: rgba(153, 153, 153, 0.75);
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Display Result */
+  #displayResult {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: right;
+    color: #333;
+  }
+  
+  /* BASIC CALCULATOR GRID FOR MOBILE */
+  /* Using 3 columns on mobile for larger tap targets */
+  .basic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(3rem, auto);
+    gap: 8px;
+  }
+
+  .scientific {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(3rem, auto);
+    gap: 8px;
+  }
+
+  /* CALCULATOR BUTTONS */
+  .basic button {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: var(--page-font);
+    cursor: pointer;
+    background: linear-gradient(to bottom, #FFF, var(--light-grey));
+    color: #333;
+    border: 2px solid var(--dark-grey);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease, transform 0.1s ease;
+  }
+
+  .scientific button {
+    font-family: var(--page-font);
+    font-size: 1.5rem;
+    border-color: linear-gradient(to top, var(--dark-grey), #666);
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #FFF, var(--light-grey));
+    color: #333;
+  }
+
+  .scientific button.wide {
+    grid-column: span 2;
+  }
+
+  .scientific button.topper {
+    border: 2px solid var(--olive-green);
+    background: linear-gradient(to bottom, var(--olive-green), #3E5C1F);
+    color: #FFF;
+  }
+
+  .scientific button.black-topper {
+    border: 2px solid #000;
+    background: linear-gradient(to bottom, var(--dark-grey), #000);
+    color: #fff;
+  }
+
+  .scientific button.operation {
+    border: 2px solid var(--sky-blue);
+    background: linear-gradient(to bottom, var(--sky-blue), #4875A2);
+    color: #FFF;
+  }
+
+  sup, sub {
+    font-size: 1rem;
+    line-height: inherit;
+  }
+
+  /* Button inner styling using pseudo-element */
+  .basic button::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: linear-gradient(to bottom, var(--light-grey), var(--dark-grey));
+    border-radius: 3px;
+    z-index: 1;
+  }
+  
+  .basic button span {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  /* Wide buttons span two columns */
+  .basic button.wide {
+    grid-column: span 2;
+  }
+  
+  /* Topper buttons */
+  .basic button.topper {
+    background: linear-gradient(to bottom, #A5C88F, var(--olive-green));
+    color: #FFF;
+    border: 2px solid var(--olive-green);
+  }
+  
+  .basic button.topper::before {
+    background: linear-gradient(to bottom, var(--olive-green), #A5C88F);
+  }
+  
+  /* Operation buttons */
+  .basic button.operation {
+    background: linear-gradient(to bottom, var(--sky-blue), #4682B4);
+    color: #FFF;
+    border: 2px solid #3B5998;
+  }
+
+  .basic button.operation::before {
+    background: linear-gradient(to bottom, #4682B4, var(--sky-blue));
+  }
+  
+  /* Active (pressed) state for all buttons */
+  .basic button:active, .scientific button:active {
+    transform: translateY(2px);
+    background: linear-gradient(to bottom, #DDD, var(--light-grey));
+  }
+  /* FOOTER */
+  footer {
+    background-color: rgba(153, 153, 153, 0.75);
+    padding: 1rem;
+    text-align: center;
+    color: #FFF;
+    font-size: 1rem;
+  }
+  
+  /* MEDIA QUERIES FOR LARGER SCREENS */
+  @media (min-width: 768px) {
+    /* Reveal background image for larger screens */
+    .background-image {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+  
+    /* Header: horizontal layout */
+    header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+  
+    /* Hide mobile menu button on desktop */
+    header button#menu {
+      display: none;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        border-left: 0;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .navigation li {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+  
+    /* Navigation: display links horizontally */
+    header nav {
+      max-height: none;
+      display: block;
+    }
+  
+    header nav ul {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  
+    /* Calculator wrapper adjusts to fixed width */
+    .wrapper {
+      max-width: 800px;
+    }
+  
+    /* Calculator grid expands to 4 columns */
+    .basic {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .scientific {
+      grid-template-columns: repeat(10, 1fr);
+    }
+  
+    /* Footer centers in a fixed-width container */
+    footer {
+      margin: 1rem auto;
+      width: 400px;
+      border-radius: 10px;
+    }
+  }
